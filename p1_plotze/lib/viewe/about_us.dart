@@ -19,7 +19,7 @@ class _AboutUsState extends State<AboutUs> {
       child: Scaffold(
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-          title: const Text("Recuperação de senha"),
+          title: const Text("Sobre o app"),
           backgroundColor: const Color.fromARGB(255, 75, 197, 245),
         ),
         body: Container(
