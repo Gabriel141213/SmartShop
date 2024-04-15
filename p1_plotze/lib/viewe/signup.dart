@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key});
+class Cadastro extends StatefulWidget {
+  const Cadastro({Key? key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Cadastro> createState() => _CadastroState();
 }
 
-class _LoginState extends State<Login> {
+class _CadastroState extends State<Cadastro> {
   final formKey = GlobalKey<FormState>();
 
   final txtValor1 = TextEditingController();
@@ -18,6 +18,10 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Material(
       child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Cadastro"),
+          backgroundColor: const Color.fromARGB(255, 75, 197, 245),
+        ),
         body: Container(
           decoration: const BoxDecoration(
               gradient: LinearGradient(
@@ -47,13 +51,6 @@ class _LoginState extends State<Login> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          // Imagens
-                          Image.asset(
-                            'images/logo3.png',
-                            width: currentWidth * 0.25,
-                            height: currentHeight * 0.15,
-                            fit: BoxFit.contain,
-                          ),
                           const Text.rich(TextSpan(
                               style: TextStyle(
                                 fontSize: 30,
@@ -71,6 +68,59 @@ class _LoginState extends State<Login> {
                                       color: Color.fromARGB(255, 247, 234, 63),
                                     )),
                               ])),
+                          SizedBox(height: currentHeight * 0.05),
+
+                          // Campo de texto
+                          SizedBox(
+                            width: currentWidth * 0.8,
+                            child: TextFormField(
+                              decoration: const InputDecoration(
+                                prefixIcon: Icon(Icons.person),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.blue),
+                                ),
+                                border: InputBorder.none,
+                                labelText: 'Nome',
+                                labelStyle: TextStyle(color: Colors.grey),
+                              ),
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Informe o seu primeiro nome';
+                                }
+                                return null;
+                              },
+                            ),
+                          ),
+
+                          SizedBox(height: currentHeight * 0.05),
+                          // Campo de texto
+                          SizedBox(
+                            width: currentWidth * 0.8,
+                            child: TextFormField(
+                              decoration: const InputDecoration(
+                                prefixIcon: Icon(Icons.person),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.grey),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.blue),
+                                ),
+                                border: InputBorder.none,
+                                labelText: 'Sobrenome',
+                                labelStyle: TextStyle(color: Colors.grey),
+                              ),
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Informe o seu sobrenome';
+                                }
+                                return null;
+                              },
+                            ),
+                          ),
+
                           SizedBox(height: currentHeight * 0.05),
 
                           // Campo de texto
@@ -124,7 +174,7 @@ class _LoginState extends State<Login> {
                                 ),
                                 border: InputBorder.none,
                                 labelText: 'Senha',
-                                labelStyle: TextStyle(color: Colors.grey),
+                                labelStyle: const TextStyle(color: Colors.grey),
                               ),
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
@@ -134,26 +184,9 @@ class _LoginState extends State<Login> {
                               },
                             ),
                           ),
-                          SizedBox(
-                            height: currentHeight * 0.01,
-                          ),
-                          TextButton(
-                            onPressed: () {
-                              Navigator.pushNamed(context, 'recuperacao_senha');
-                            },
-                            child: const Text("Esqueceu a senha?"),
-                          ),
-
-                          TextButton(
-                            onPressed: () {
-                              Navigator.pushNamed(context, 'sobre');
-                            },
-                            child: const Text("Sobre o app"),
-                          ),
 
                           SizedBox(height: currentHeight * 0.05),
 
-                          // Botões
                           SizedBox(
                             width: currentWidth < 700
                                 ? currentWidth * 0.5
@@ -171,29 +204,7 @@ class _LoginState extends State<Login> {
                                   Navigator.pushNamed(context, 'shoppingList');
                                 }
                               },
-                              child: const Text('Log-in',
-                                  style: TextStyle(fontSize: 20)),
-                            ),
-                          ),
-
-                          SizedBox(height: currentHeight * 0.01),
-
-                          SizedBox(
-                            width: currentWidth < 700
-                                ? currentWidth * 0.5
-                                : currentWidth * 0.2,
-                            height: currentHeight > 700
-                                ? currentHeight * 0.04
-                                : currentHeight * 0.08,
-                            child: ElevatedButton(
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: Colors.grey.shade100,
-                                foregroundColor: Colors.grey.shade700,
-                              ),
-                              onPressed: () {
-                                Navigator.pushNamed(context, 'cadastro');
-                              },
-                              child: const Text('Sign-up',
+                              child: const Text('Sign-in',
                                   style: TextStyle(
                                     fontSize: 20,
                                   )),

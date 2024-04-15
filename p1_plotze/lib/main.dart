@@ -1,9 +1,12 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:p1_plotze/viewe/about_us.dart';
+import 'package:p1_plotze/viewe/email_sent.dart';
 import 'package:p1_plotze/viewe/login.dart';
 import 'package:p1_plotze/viewe/lista_de_compras.dart';
-import 'package:p1_plotze/viewe/tela4_view.dart';
+import 'package:p1_plotze/viewe/pwd_forgot.dart';
+import 'package:p1_plotze/viewe/signup.dart';
 
 void main() {
   runApp(
@@ -29,7 +32,10 @@ class MainApp extends StatelessWidget {
       routes: {
         'login': (context) => Login(),
         'shoppingList': (context) => ShoppingList(),
-        't4': (context) => Tela4View()
+        'cadastro': (context) => Cadastro(),
+        'recuperacao_senha': (context) => PasswordRecover(),
+        'email_enviado': (context) => EmailSent(),
+        'sobre': (context) => AboutUs(),
       },
     );
   }
