@@ -204,7 +204,7 @@ class _CadastroState extends State<Cadastro> {
                                   Navigator.pushNamed(context, 'shoppingList');
                                 }
                               },
-                              child: const Text('Sign-in',
+                              child: const Text('Confirmar',
                                   style: TextStyle(
                                     fontSize: 20,
                                   )),

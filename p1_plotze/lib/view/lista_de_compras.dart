@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:p1_plotze/itens.dart';
 import 'package:p1_plotze/itens_repository.dart';
-import 'package:p1_plotze/viewe/subitens_list.dart';
+import 'package:p1_plotze/view/subitens_list.dart';
 
 class ShoppingList extends StatefulWidget {
   const ShoppingList({Key? key}) : super(key: key);

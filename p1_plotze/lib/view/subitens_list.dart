@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:p1_plotze/itens.dart';
-import 'package:p1_plotze/viewe/subitem_edit.dart';
 
 class SubItensList extends StatefulWidget {
   final Item item;

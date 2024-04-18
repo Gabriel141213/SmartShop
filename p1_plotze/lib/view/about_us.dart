@@ -61,7 +61,7 @@ class _AboutUsState extends State<AboutUs> {
                             padding: EdgeInsets.fromLTRB(8.0, 0, 8.0, 0),
                             child: Text(
                               "Bem-vindo ao nosso aplicativo de lista de compras! Com um layout moderno, combinando tons de azul e amarelo,"
-                              "nosso objetivo é simplificar sua organização de compras diárias."
+                              "nosso objetivo é simplificar sua organização de compras diárias. "
                               "Desenvolvido por Gabriel da Silva Assunção, estamos aqui para tornar suas compras mais fáceis e eficientes",
                               textAlign: TextAlign.center,
                               style: TextStyle(
