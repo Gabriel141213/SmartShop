@@ -87,12 +87,8 @@ class _SubItensListState extends State<SubItensList> {
                     ),
                     onDismissed: (direction) {
                       setState(() {
-                        final removedItem = filteredSubitens[
-                            index]; // Captura o item a ser removido
-                        widget.item.subitens.remove(
-                            removedItem); // Remove o item da lista original
-                        filteredSubitens
-                            .removeAt(index); // Remove o item da lista filtrada
+                        widget.item.subitens.removeAt(index);
+                        filterList(pesquisa.text);
                       });
                     },
                     child: Container(
