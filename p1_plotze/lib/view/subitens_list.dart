@@ -87,8 +87,15 @@ class _SubItensListState extends State<SubItensList> {
                     ),
                     onDismissed: (direction) {
                       setState(() {
-                        widget.item.subitens.removeAt(index);
-                        filterList(pesquisa.text);
+                        // Obtém o item a ser removido
+                        ItemQtdComprado itemToRemove = filteredSubitens[index];
+
+                        // Remove o item da lista filtrada
+                        filteredSubitens.removeAt(index);
+
+                        // Remove o item correspondente da lista principal
+                        widget.item.subitens.removeWhere(
+                            (subitem) => subitem.item == itemToRemove.item);
                       });
                     },
                     child: Container(
